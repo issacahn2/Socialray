@@ -24,6 +24,8 @@ export default function SocialRayPage() {
                     <div className="flex items-center gap-8">
                         <Link href="#services" className="text-sm font-medium text-ray-text-dim hover:text-ray-primary transition-colors">Services</Link>
                         <Link href="#packages" className="text-sm font-medium text-ray-text-dim hover:text-ray-primary transition-colors">Pricing</Link>
+                        <Link href="#testimonials" className="text-sm font-medium text-ray-text-dim hover:text-ray-primary transition-colors">Experience</Link>
+                        <Link href="#case-studies" className="text-sm font-medium text-ray-text-dim hover:text-ray-primary transition-colors">Results</Link>
                         <Link
                             href="https://tally.so/r/jay4Wx"
                             target="_blank"
@@ -245,6 +247,108 @@ export default function SocialRayPage() {
                                     Contact Us
                                 </Link>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Testimonials Section */}
+                <section className="py-28 px-6" id="testimonials">
+                    <div className="container mx-auto max-w-4xl">
+                        <div className="mb-20">
+                            <span className="text-xs font-black tracking-[0.3em] uppercase text-ray-primary block mb-4">— What Clients Say</span>
+                            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">Don't take my word<br />for it.</h2>
+                        </div>
+                        <div className="space-y-8">
+                            {[
+                                {
+                                    quote: "Ray completely transformed our social media presence. He didn't just post content — he brought real strategy, connections, and energy that took us from invisible to a brand people actually recognized.",
+                                    author: "Isa",
+                                    role: "Founder, Stripchain"
+                                },
+                                {
+                                    quote: "Working with Ray was a game-changer for our launch. He doesn't just promise numbers — he delivers results and connects you with people who actually move the needle.",
+                                    author: "Jason",
+                                    role: "Co-Founder, KeyTalk AI"
+                                },
+                                {
+                                    quote: "Most agencies talk a big game. Ray is the only one who showed me the receipts before I even signed. His network alone is worth the investment.",
+                                    author: "Danny",
+                                    role: "CEO, Alpacadabraz"
+                                }
+                            ].map((t, i) => (
+                                <div key={i} className="bg-ray-card p-10 rounded-3xl border border-ray-border relative overflow-hidden group shadow-neo-dark">
+                                    <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                                    <div className="text-ray-primary mb-6">
+                                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 18H8.4L11.4 12V0H0V18ZM12.6 18H21L24 12V0H12.6V18Z" fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-lg italic text-white/90 leading-relaxed mb-8 relative z-10">{t.quote}</p>
+                                    <div className="h-px w-12 bg-ray-primary/30 mb-6 relative z-10"></div>
+                                    <div className="text-sm font-medium text-ray-text-dim relative z-10">
+                                        <span className="text-white font-bold">{t.author}</span> — {t.role}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Case Studies Section */}
+                <section className="py-28 px-6 bg-ray-card/10" id="case-studies">
+                    <div className="container mx-auto max-w-6xl">
+                        <div className="mb-20">
+                            <span className="text-xs font-black tracking-[0.3em] uppercase text-ray-primary block mb-4">— Case Studies</span>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {[
+                                {
+                                    tag: "WEB3",
+                                    title: "Korea Blockchain Week",
+                                    stat: "<5K to 28K followers in 6 weeks",
+                                    desc: "Grew Korea's flagship crypto event X account through targeted growth strategies."
+                                },
+                                {
+                                    tag: "WEB3 / NFT",
+                                    title: "Alpacadabraz",
+                                    stat: "$50K+ in NFT sales from community push",
+                                    desc: "0 to 10K Discord members in weeks. Whitelist strategy drove direct NFT revenue."
+                                },
+                                {
+                                    tag: "WEB3 / NFT",
+                                    title: "SuperNormal NFT",
+                                    stat: "~$100M trading volume achieved",
+                                    desc: "#1 Korea-based NFT by volume. US and global audience acquisition."
+                                },
+                                {
+                                    tag: "WEB3 / FULL SERVICE",
+                                    title: "Stripchain",
+                                    stat: "0 to 20K users in < 1 month",
+                                    desc: "Full launch distribution including KOLs, press, and community activation."
+                                },
+                                {
+                                    tag: "AI / PRODUCT LAUNCH",
+                                    title: "KeyTalk AI",
+                                    stat: "Product of the Month — 500+ reviews",
+                                    desc: "Launch strategy and community activation for AI startup."
+                                },
+                                {
+                                    tag: "WEB3 / GAMING",
+                                    title: "Off The Grid",
+                                    stat: "8K+ user emails collected from LatAm",
+                                    desc: "Influencer activation for one of the most hyped Web3 gaming projects."
+                                }
+                            ].map((cs, i) => (
+                                <div key={i} className="bg-ray-card p-10 rounded-[32px] border border-ray-border relative overflow-hidden group hover:border-ray-primary/30 transition-all shadow-neo-dark min-h-[260px] flex flex-col justify-between">
+                                    <GlowingEffect spread={40} glow={true} disabled={false} proximity={64} inactiveZone={0.01} />
+                                    <div className="relative z-10">
+                                        <div className="text-[10px] font-black tracking-[0.2em] text-ray-primary uppercase mb-4 opacity-70">{cs.tag}</div>
+                                        <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{cs.title}</h3>
+                                        <div className="text-sm font-black text-ray-primary/90 mb-4">{cs.stat}</div>
+                                        <p className="text-ray-text-dim/80 text-sm leading-relaxed max-w-sm">{cs.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
